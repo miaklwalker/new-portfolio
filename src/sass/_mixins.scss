@@ -1,0 +1,36 @@
+@mixin phone {
+  @media screen and (max-width: 899px) {
+    @content
+  }
+};
+@mixin tablet {
+  @media screen and (max-width: 1000px) and (min-width: 900px) {
+    @content
+  }
+}
+@mixin desktop {
+  @media screen and (max-width:1440px) and (min-width:1001px){
+    @content
+  }
+};
+@mixin large-desktop{
+  @media screen and (min-width:1441px){
+    @content
+  }
+}
+
+
+
+
+
+
+
+@mixin pop-shadow-filter {
+  filter: drop-shadow(2px 2px 2px black), drop-shadow(-2px -2px 2px #FEFEFE);
+}
+@mixin pop-shadow {
+  box-shadow: 2px 2px 2px var(--black),-2px -2px 2px #fefefe;
+}
+@mixin pop-shadow-inverse {
+  box-shadow: -2px -2px 2px var(--black),2px 2px 2px #fefefe;
+}

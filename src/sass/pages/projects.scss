@@ -1,0 +1,47 @@
+.language-container{
+  svg {
+    --color: #767586;
+    fill: var(--color);
+    transition: all .5s ease-in;
+    &:hover {
+      flex-grow: .1;
+      transform: scale(1.05);
+      transition: all .15s ease-in;
+      &.babel {
+        --color: #f9dc3e;
+      }
+      &.css {
+        --color: #1572b6;
+      }
+      &.html {
+        --color: #e34f26;
+      }
+      &.javascript {
+        --color: #f7df1e;
+      }
+      &.typescript {
+        --color: #007acc;
+      }
+      &.jest {
+        --color: #c21325;
+      }
+      &.sass{
+        --color: #a53b70;
+      }
+      &.react{
+        --color: #60DAFB;
+      }
+      &.gatsby{
+        --color:rgb(102, 51, 153);
+      }
+      &::after{
+        content:"hovered";
+        color:black;
+        position: absolute;
+        width:30px;
+        height:20px;
+        font-size:28px;
+      }
+    }
+  }
+}

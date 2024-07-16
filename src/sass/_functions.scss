@@ -1,0 +1,12 @@
+@function responsive-font ($maxSize,$minSize){
+  @return calc(#{$minSize}px + (#{$maxSize} - #{$minSize}) * ((100vw - 750px)/(1366 - 750)))
+};
+
+@function responsive-font-sized ($maxSize,$minSize,$screenMin,$screenMax){
+  @return calc( #{$minSize}px + (#{$maxSize} - #{$minSize}) * ( (100vw - #{$screenMin}) / (#{$screenMax}-#{$screenMin})))
+}
+
+@function pop-shadow($pxValue){
+  @return  #{$pxValue}px  #{$pxValue}px #{$pxValue}px var(--black),
+  -#{$pxValue}px -#{$pxValue}px #{$pxValue}px #fefefe;
+}
