@@ -22,6 +22,6 @@ export function ActionToggle() {
     );
 
     return (
-        <Switch size="md" color="dark.4" checked={colorTheme.colorScheme === "light"}  onClick={colorTheme.toggleColorScheme} onLabel={sunIcon} offLabel={moonIcon} />
+        <Switch size="sm" color="dark.4" checked={colorTheme.colorScheme === "light"}  onClick={colorTheme.toggleColorScheme} onLabel={sunIcon} offLabel={moonIcon} />
     );
 }

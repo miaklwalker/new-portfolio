@@ -2,7 +2,7 @@ import React from "react"
 import * as classes from '../../sass/MobileNavBar.module.scss';
 import {
     AppShell,
-    Burger,
+    Burger, Button,
     Center,
     Container,
     Divider,
@@ -13,10 +13,18 @@ import {
     Title,
     UnstyledButton
 } from "@mantine/core";
-import {useDisclosure, useHeadroom, useInViewport} from "@mantine/hooks";
+import {
+    useDisclosure,
+    useElementSize,
+    useHeadroom,
+    useInViewport,
+    useViewportSize,
+    useWindowScroll
+} from "@mantine/hooks";
 import {ActionToggle} from "../themeToggle/ActionToggle";
 import {Footer} from "../../../.cache/fast-refresh-overlay/components/overlay";
 import {FooterSimple} from "./footer";
+import {IconDownload} from "@tabler/icons-react";
 
 const links = [
     {
@@ -31,39 +39,37 @@ const links = [
         label: "Projects",
         href: "/projects"
     },
-    {
-        label: "Blog",
-        href: "/blog"
-    },
+
     {
         label: "Contact",
         href: "/contact"
-    }
+    },
 ]
 
 
 export default function Layout({children}) {
+    const [scroll, scrollTo] = useWindowScroll();
     const [opened, {toggle}] = useDisclosure();
     const {ref, inViewport} = useInViewport();
-    const pinned = useHeadroom({ fixedAt: 120 });
+    const pinned = useHeadroom({ fixedAt: 50 });
+
+    // if the height of the layout is less than the height of the viewport, then we don't need to show the footer
+
 
 
     const linkList = links.map((link, index) => (
-        <UnstyledButton key={index} component={'a'} className={classes.control}
-                        href={link.href}>{link.label} </UnstyledButton>))
+        <UnstyledButton key={index} component={'a'} className={classes.control} {...link} >{link.label} </UnstyledButton>))
 
     const navList = links.map((link, index) => (<React.Fragment key={index}>
         <UnstyledButton component={'a'} href={link.href} className={classes.control}>{link.label}</UnstyledButton>
         <Divider/>
     </React.Fragment>))
-
-
-
+    const showFooter = !(scroll.y > 50 && inViewport);
     return (
         <AppShell
             header={{height: 60, collapsed: !pinned}}
             navbar={{width: 300, breakpoint: 'sm', collapsed: {desktop: true, mobile: !opened}}}
-            footer={{height: 50, collapsed: !inViewport}}
+            footer={{height: 50, collapsed: showFooter}}
             padding="md"
         >
             <AppShell.Header>
@@ -77,6 +83,7 @@ export default function Layout({children}) {
                             <Group ml="xl" gap={0} visibleFrom="sm">
                                 {linkList}
                                 <ActionToggle/>
+                                <Button mx={'1rem'} size={'sm'} rightSection={<IconDownload size={'1rem'}/>}  component={'a'} href="/CV.docx" download> Resume </Button>
                             </Group>
                             <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm"/>
                         </Group>

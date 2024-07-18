@@ -6,10 +6,10 @@ import {useWindowScroll} from "@mantine/hooks";
 import {IconArrowUp} from "@tabler/icons-react";
 
 const links = [
-    {link: '#', label: 'Contact'},
-    {link: '#', label: 'Privacy'},
-    {link: '#', label: 'Blog'},
-    {link: '#', label: 'Careers'},
+    {link: '/', label: 'Home'},
+    {link: '/about', label: 'About'},
+    {link: '/projects', label: 'Projects'},
+    {link: '/contact', label: 'Contact'},
 ];
 
 export function FooterSimple({show}) {
@@ -33,7 +33,6 @@ export function FooterSimple({show}) {
     }else{
         show = (show && scroll.y > 50);
     }
-    console.log(show)
     return (
         <Container>
             <Group justify={'space-between'}>

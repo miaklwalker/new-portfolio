@@ -60,11 +60,11 @@ const Projects = () => {
         <Layout>
             <Container>
                 <Title ta={'center'} my={'xl'}>PROJECTS</Title>
-                <SimpleGrid px={'1rem'} cols={{md:2}}>
+                <SimpleGrid style={{justifyContent:"center"}} justify={'center'} px={'1rem'} cols={{md:2}}>
                     {nodes.map((edge, index) => {
                         const image = getImage(edge.images.gatsbyImageData);
                         return (
-                            <Paper key={index} withBorder p={'2%'}>
+                            <Paper maw={480} key={index} withBorder p={'2%'}>
                                 <Group mt={'1rem'} mb={'1.3rem'} justify={'space-between'}>
                                     <Title order={3}> {edge.name} </Title>
                                     <Text fz={'xs'} c={'dimmed'}> {edge.startDate} </Text>
