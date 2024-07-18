@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import Layout from "../components/layout.jsx"
+import Layout from "../components/layout"
 import {Center, Code, Text, Title} from "@mantine/core";
 
 
