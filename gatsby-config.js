@@ -1,6 +1,9 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+
+require("dotenv").config()
+
 module.exports = {
     siteMetadata: {
         title: `new-portfolio`,
@@ -21,6 +24,7 @@ module.exports = {
         "gatsby-plugin-sass",
         "gatsby-plugin-sitemap",
         "gatsby-transformer-remark",
+        `gatsby-transformer-json`,
         {
             resolve: 'gatsby-source-filesystem',
             options: {
