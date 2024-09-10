@@ -31,6 +31,7 @@
     "framer-motion": "^11.3.2",
     "gatsby": "^5.13.5",
     "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-layout": "^4.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-postcss": "^6.13.1",
     "gatsby-plugin-sass": "^6.13.1",

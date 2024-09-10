@@ -14,7 +14,7 @@ import R from "../../components/techIcons/R";
 import REDUX from "../../components/techIcons/REDUX";
 import SASS from "../../components/techIcons/SASS";
 import Typescript from "../../components/techIcons/TYPESCRIPT";
-import Layout from "../../components/layout";
+import Layout from "../../layouts";
 import {IconBook, IconBrandGithub, IconPlayerPlay} from "@tabler/icons-react";
 
 const Icons = {

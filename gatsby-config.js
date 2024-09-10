@@ -9,6 +9,9 @@ module.exports = {
         title: `new-portfolio`,
         siteUrl: `https://www.yourdomain.tld`
     },
+    flags: {
+        DEV_SSR: true
+    },
     plugins: [
         {
             resolve: 'gatsby-source-contentful',
@@ -17,6 +20,7 @@ module.exports = {
                 "spaceId": process.env.space_id
             }
         },
+        // `gatsby-plugin-layout`,
         "gatsby-plugin-sharp",
         "gatsby-plugin-postcss",
         "gatsby-plugin-image",

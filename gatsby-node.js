@@ -6,6 +6,7 @@
 
 // You can delete this file if you're not using it
 
+const React = require("react");
 require("dotenv").config({
     path: `.env`,
 });
@@ -32,15 +33,15 @@ exports.createPages = async ({actions:{createPage},graphql}) => {
     }`);
 
     const {allContentfulBlogPost,allContentfulProject} = query.data;
-    // allContentfulBlogPost.nodes.forEach(({slug})=>{
-    //     createPage({
-    //         path:`blog/${slug}`,
-    //         component:require.resolve("./src/templates/blogPost.jsx"),
-    //         context:{
-    //             slug:slug
-    //         }
-    //     })
-    // })
+    allContentfulBlogPost.nodes.forEach(({slug})=>{
+        createPage({
+            path:`blog/${slug}`,
+            component:require.resolve("./src/templates/blogPost.jsx"),
+            context:{
+                slug:slug
+            }
+        })
+    })
 
     allContentfulProject.nodes.forEach(({slug})=>{
         createPage({
@@ -52,3 +53,8 @@ exports.createPages = async ({actions:{createPage},graphql}) => {
         })
     })
 }
+
+
+
+
+

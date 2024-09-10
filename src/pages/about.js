@@ -1,7 +1,7 @@
 import React, {Component} from "react"
-import Layout from "../components/layout"
 import {Center, Code, Text, Title} from "@mantine/core";
 import {CodeHighlight} from "@mantine/code-highlight";
+import Layout from "../layouts";
 
 
 function About () {

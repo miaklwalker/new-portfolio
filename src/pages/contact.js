@@ -1,7 +1,7 @@
 import React from "react"
 import {TextInput, Textarea, SimpleGrid, Group, Title, Button, Container} from '@mantine/core';
 import { useForm } from '@mantine/form';
-import Layout from "../components/layout";
+import Layout from "../layouts";
 
 export default function GetInTouchSimple() {
     const form = useForm({

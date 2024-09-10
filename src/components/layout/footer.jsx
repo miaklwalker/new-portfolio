@@ -4,13 +4,9 @@ import * as classes from './FooterSimple.module.css';
 import React from "react";
 import {useWindowScroll} from "@mantine/hooks";
 import {IconArrowUp} from "@tabler/icons-react";
+import {links} from "../../layouts";
 
-const links = [
-    {link: '/', label: 'Home'},
-    {link: '/about', label: 'About'},
-    {link: '/projects', label: 'Projects'},
-    {link: '/contact', label: 'Contact'},
-];
+
 
 export function FooterSimple({show}) {
 

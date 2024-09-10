@@ -1,7 +1,7 @@
 import React from "react";
 import {graphql} from "gatsby";
 import {documentToReactComponents} from "@contentful/rich-text-react-renderer"
-import Index from "../components/layout";
+import Layout from "../layouts";
 import {Container, Divider, Grid, Title} from "@mantine/core";
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
 
@@ -85,7 +85,7 @@ export default function Project({data}) {
     console.log(lessons);
 
     return (
-        <Index>
+        <Layout>
             <Container>
                 <Title my={'lg'}>{name}</Title>
                 <ContentArea data={description}/>
@@ -99,6 +99,6 @@ export default function Project({data}) {
                 <GatsbyImage image={lessonImage} alt={""}/>
                 <ContentArea data={lessons}/>
             </Container>
-        </Index>
+        </Layout>
     )
 }
